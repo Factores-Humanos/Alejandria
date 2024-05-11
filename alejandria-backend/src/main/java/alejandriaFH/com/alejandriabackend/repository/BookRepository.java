@@ -1,4 +1,8 @@
 package alejandriaFH.com.alejandriabackend.repository;
 
-public interface BookRepository {
+import alejandriaFH.com.alejandriabackend.entity.Book;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookRepository extends JpaRepository<Book, Integer> {
+
 }
