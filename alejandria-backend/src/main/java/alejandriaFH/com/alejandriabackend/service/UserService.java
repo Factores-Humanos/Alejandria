@@ -9,4 +9,5 @@ public interface UserService {
     UserDto getUserById(Integer userId);
     List<UserDto> getAllUsers();
     UserDto updateUser(Integer userId, UserDto userDto);
+    boolean authenticateUser(String email, String password);
 }

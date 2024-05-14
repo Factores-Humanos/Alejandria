@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -55,10 +56,14 @@ public class Book {
     @JoinColumn(name = "seller_id", nullable = true)
     private User seller;
 
+    @ManyToMany(mappedBy = "books", fetch = FetchType.LAZY)
+    private List<Purchase> purchases;
+
     @Column(name = "created_date", nullable = false)
     private OffsetDateTime createdDate;
 
     @Column(name = "deleted_date")
     private OffsetDateTime deletedDate;
+
 
 }

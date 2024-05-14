@@ -1,5 +1,6 @@
 package alejandriaFH.com.alejandriabackend.controller;
 
+import alejandriaFH.com.alejandriabackend.dto.LoginRequest;
 import alejandriaFH.com.alejandriabackend.dto.UserDto;
 import alejandriaFH.com.alejandriabackend.repository.UserRepository;
 import alejandriaFH.com.alejandriabackend.service.UserService;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin("*")
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/users")
@@ -47,5 +49,15 @@ public class UserController {
         return ResponseEntity.ok(userDto);
     }
 
+    //login
+    @PostMapping("/login")
+    public ResponseEntity<String> authenticateUSer(@RequestBody LoginRequest loginRequest){
+        boolean loginSuccessful = userService.authenticateUser(loginRequest.getEmail(), loginRequest.getPassword());
 
+        if(loginSuccessful) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password");
+        }
+    }
 }

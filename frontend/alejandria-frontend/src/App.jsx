@@ -1,11 +1,15 @@
 import './App.css'
-
+import Login from "./components/(admin)/Login"
+import SideBar from './components/(admin)/SideBar'
+import AdminHome from './pages/(admin)/AdminHome'
 function App() {
   return (
     <>
-      <h1 className='text-uppercase'>Hola mundo</h1>
+      {/* <Login></Login> */}
+      {/* <SideBar></SideBar>  */}
+      <AdminHome></AdminHome>
     </>
   )
-}
+} 
 
 export default App

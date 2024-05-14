@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.OffsetDateTime;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -23,14 +25,20 @@ public class Purchase {
     @Column(name = "date_purchase", nullable = false)
     private OffsetDateTime datePurchase;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @ManyToMany(fetch =  FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinTable(
+            name = "book_purchase", joinColumns =  @JoinColumn(name = "purchase_id", referencedColumnName = "id"),
+            inverseJoinColumns =  @JoinColumn(name = "book_id", referencedColumnName = "id")
+    )
+
+    @ManyToMany(fetch = )
+    private Set<Book> books;
 
     @Column(name = "created_date", nullable = false)
     private OffsetDateTime createdDate;
 
     @Column(name = "deleted_date")
     private OffsetDateTime deletedDate;
+
 
 }

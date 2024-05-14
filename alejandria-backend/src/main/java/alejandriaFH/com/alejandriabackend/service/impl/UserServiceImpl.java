@@ -51,4 +51,13 @@ public class UserServiceImpl implements UserService {
 
         return UserMapper.mapToUserDto(updatedUserObj);
     }
+
+    @Override
+    public boolean authenticateUser(String email, String password) {
+        User user = userRepository.findByEmailAddress(email);
+
+        return user != null && user.getUserPassword().equals(password);
+    }
+
+
 }

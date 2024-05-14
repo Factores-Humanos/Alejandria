@@ -5,6 +5,8 @@ import alejandriaFH.com.alejandriabackend.entity.Format;
 import alejandriaFH.com.alejandriabackend.entity.Publisher;
 import alejandriaFH.com.alejandriabackend.entity.User;
 import java.time.OffsetDateTime;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,6 +28,8 @@ public class BookDto {
     //private Author author;
     //private Publisher publisher;
     //private User seller;
+    private List<PurchaseDto> purchases;
     private OffsetDateTime createdDate;
     private OffsetDateTime deletedDate;
+
 }
