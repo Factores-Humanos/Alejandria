@@ -31,3 +31,11 @@
 
 2. **Ejecutar el Frontend:**
    - Ejecute el comando `npm run dev`.
+
+## Configuración Fronted Cliente (vue)
+
+   - Posiciónese en la carpeta `Alejandria/frontend-cliente/`.
+   - Ejecute el comando `npm install`.
+   - Instalar dependencias: `npm install`.
+   - Formatear el código: `npm run format`.
+   - Iniciar el servidor de desarrollo: `npm run dev`.
