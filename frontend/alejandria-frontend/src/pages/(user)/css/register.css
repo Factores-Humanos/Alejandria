@@ -1,0 +1,78 @@
+.login-right {
+    background-image: url('../../../assets/registerImage.svg');
+    background-size: cover;
+    color: white;
+    padding: 50px;
+    height: 100vh;
+}
+
+.login-left {
+    padding: 50px;
+    height: 100vh;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.login-right,
+.login-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-title {
+    color: var(--verde_oscuro);
+}
+
+.login-input {
+    color: #0C0C0C !important;
+    background-color: #F0E8DA !important;
+}
+
+.login-btn {
+    background-color: var(--cafe_oscuro) !important;
+    border: none !important;
+}
+
+.login-btn:hover {
+    background-color: var(--verde_oscuro) !important;
+    border: none !important;
+}
+
+.login-welcome {
+    color: black;
+}
+
+.signup-btn {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid black !important;
+    border-radius: 30px !important;
+}
+
+.signup-btn:hover {
+    background-color: rgba(255, 255, 255, 1) !important;
+    /* Cambia la opacidad al 100% en hover */
+}
+
+.logo-img {
+    top: 0;
+    left: 0;
+    width: '100px'
+}
+
+.error-message {
+    color: #721c24; /* Color de texto rojo oscuro */
+    background-color: #f8d7da; /* Color de fondo rojo claro */
+    border: 1px solid #f5c6cb; /* Borde rojo */
+    padding: 10px; /* Espaciado interior */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 5px; /* Espacio superior */
+}
+
+.message-container{
+    width: 50%;
+}
