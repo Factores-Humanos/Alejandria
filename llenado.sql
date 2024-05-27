@@ -3,7 +3,6 @@ DELETE FROM category;
 ALTER SEQUENCE category_id_seq RESTART WITH 1;
 INSERT INTO category (description, created_date)
 VALUES
-('Description', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
 ('Drama', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
 ('Accion', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
 ('Comedia', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
@@ -37,7 +36,6 @@ DELETE FROM format;
 ALTER SEQUENCE format_id_seq RESTART WITH 1;
 INSERT INTO format (description, created_date)
 VALUES
-('description', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
 ('digital', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota'),
 ('fisico', CURRENT_TIMESTAMP AT TIME ZONE 'America/Bogota');
 

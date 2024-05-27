@@ -3,8 +3,10 @@ from .models import Sale, Purchase
 from .serializers import SaleSerializer, PurchaseSerializer
 
 class SaleViewSet(viewsets.ModelViewSet):
+    
     queryset = Sale.objects.all()
     serializer_class = SaleSerializer
+    
     
 class PurchaseViewSet(viewsets.ModelViewSet):
     queryset = Purchase.objects.all()

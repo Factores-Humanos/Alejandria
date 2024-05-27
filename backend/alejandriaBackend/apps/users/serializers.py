@@ -1,17 +1,7 @@
 from rest_framework import serializers
-from .models import User, Role, FavoriteList, Cart, Comment
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = "__all__"
-
-
-class RoleSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Role
-        fields = "__all__"
+from .models import FavoriteList, Cart, Comment
+from apps.comon import UserSerializer
+from apps.books.serializers import BookSerializer
 
 
 class FavoriteListSerializer(serializers.ModelSerializer):
@@ -21,6 +11,8 @@ class FavoriteListSerializer(serializers.ModelSerializer):
 
 
 class CartSerializer(serializers.ModelSerializer):
+    user = UserSerializer()
+    books = BookSerializer(many=True, read_only=True)
     class Meta:
         model = Cart
         fields = "__all__"

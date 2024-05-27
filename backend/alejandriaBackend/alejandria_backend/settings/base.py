@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # External Packahges
     "rest_framework",
     "drf_spectacular",
+    "corsheaders",
     # Internal apps
     "apps.books",
     "apps.sales",
@@ -33,6 +34,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -41,6 +43,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "alejandria_backend.urls"
+
 
 TEMPLATES = [
     {

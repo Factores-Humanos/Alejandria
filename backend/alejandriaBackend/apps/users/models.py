@@ -3,24 +3,27 @@ from apps.books.models import Book
 from apps.baseModel import BaseModel
 
 
-class User(BaseModel):
-    user_name = models.CharField(max_length=50)
-    email_address = models.CharField(unique=True, max_length=40)
-    user_password = models.CharField(max_length=20)
-    street_address = models.CharField(blank=True, null=True)
-    score = models.IntegerField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = "user"
-
-
 class Role(BaseModel):
     description = models.CharField(max_length=30)
 
     class Meta:
         managed = False
         db_table = "role"
+        
+        
+class User(BaseModel):
+    user_name = models.CharField(max_length=50)
+    email_address = models.CharField(unique=True, max_length=40)
+    user_password = models.CharField()
+    street_address = models.CharField(blank=True, null=True)
+    score = models.IntegerField(blank=True, null=True)
+    roles = models.ManyToManyField(Role, db_table="user_role")
+
+    class Meta:
+        managed = False
+        db_table = "user"
+
+
 
 
 class FavoriteList(BaseModel):

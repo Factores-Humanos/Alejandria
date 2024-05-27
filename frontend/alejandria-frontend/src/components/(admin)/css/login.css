@@ -1,4 +1,4 @@
-.login-right {
+.login-right-login {
     background-image: url('../../../assets/loginImage.svg');
     background-size: cover;
     color: white;
@@ -16,7 +16,7 @@
     margin-bottom: 20px;
 }
 
-.login-right,
+.login-right-login,
 .login-left {
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 .login-title {
-    color: #509B95;
+    color: var(--verde_oscuro);
 }
 
 .login-input {
@@ -33,12 +33,12 @@
 }
 
 .login-btn {
-    background-color: #5B4D47 !important;
+    background-color: var(--cafe_oscuro) !important;
     border: none !important;
 }
 
 .login-btn:hover {
-    background-color: #509B95 !important;
+    background-color: var(--verde_oscuro) !important;
     border: none !important;
 }
 

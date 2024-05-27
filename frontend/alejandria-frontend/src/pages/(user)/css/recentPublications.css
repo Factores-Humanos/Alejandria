@@ -1,0 +1,65 @@
+/* recentPublications.css */
+.recent-publications {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 0 40px;
+    /* Añade un padding para crear espacio para las flechas */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: -30px;
+    /* Ajusta la posición hacia afuera */
+}
+
+.next {
+    right: -30px;
+    /* Ajusta la posición hacia afuera */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.book {
+    text-align: center;
+    padding: 10px;
+    min-width: 25%;
+    /* Asegura que cada libro ocupe un cuarto del contenedor */
+}
+
+.book-cover {
+    width: auto;
+    height: 350px;
+}
+
+.book-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.book-author,
+.book-price {
+    font-size: 1rem;
+    color: var(--texto);
+}
+
+.add-to-cart {
+    margin-top: 10px;
+}
