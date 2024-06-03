@@ -1,0 +1,22 @@
+.container-bg {
+    background-position: top;
+    /* Centra la imagen en el contenedor */
+    
+    background-size: auto 50%;
+    /* Cambia el tamaño del alto de la imagen al 50% del contenedor */
+    background-color: var(--fondo);
+    /* background-image: url('../../../assets/ave1.svg'); */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
+    width: 100vw;
+    /* Asegura que el contenedor tenga el ancho completo de la ventana */
+    height: 100%;
+    /* Asegura que el contenedor tenga la altura completa de la ventana */
+    margin: 0;
+    /* Elimina los márgenes para evitar espacios no deseados */
+    padding: 0;
+}
+
+/* Resto de estilos para los elementos dentro de la página */
+
+/* Resto de estilos para los elementos dentro de la página */

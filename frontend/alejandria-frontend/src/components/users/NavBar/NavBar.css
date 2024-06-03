@@ -1,0 +1,104 @@
+.navbar-custom {
+    background-color: var(--verde_claro);
+    box-shadow: 1px 6px 15px -1px rgba(0, 0, 0, 0.23);
+}
+
+
+/* Dropdown styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--texto);
+    background-color: #fff;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    background-color: #fff;
+    padding: 0.25rem 1.5rem;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Search bar styles */
+.search-bar {
+    border: 1px solid var(--cafe_oscuro) !important;
+    border-radius: 30px !important;
+    background-color: var(--beige_claro) !important;
+    box-shadow: -1px 0px 11px 0px rgba(0, 0, 0, 0.19);
+}
+
+/* Login button styles */
+.login-btn-nav {
+    background-color: var(--verde_oscuro) !important;
+    color: var(--beige_claro) !important;
+    border: 1px solid var(--beige_claro) !important;
+}
+
+.login-btn-nav:hover {
+    background-color: var(--verde_oscuro) !important;
+    color: var(--beige_claro) !important;
+    border: 1px solid var(--beige_claro) !important;
+}
+
+/* Register button styles */
+.register-btn-nav {
+    background-color: var(--beige_claro) !important;
+    color: var(--verde_oscuro) !important;
+    border: 1px solid var(--verde_oscuro) !important;
+}
+
+.register-btn-nav:hover {
+    background-color: var(--beige_claro) !important;
+    color: var(--verde_oscuro) !important;
+    border: 1px solid var(--verde_oscuro) !important;
+}
+
+.select-mode {
+    color: var(--texto) !important;
+}
+
+.logo-name {
+    color: black;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: left;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        float: none;
+    }
+}

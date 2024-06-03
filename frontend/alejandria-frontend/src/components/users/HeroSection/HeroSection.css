@@ -1,0 +1,29 @@
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.359);
+    background: rgb(201, 216, 177);
+    background: linear-gradient(180deg, var(--verde_claro) 19%, var(--fondo) 72%);
+}
+
+.hero-section .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.hero-section .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.img-fluid {
+    max-width: 50% !important;
+}
+
+.display-4 {
+    color: var(--texto) ;
+}
+
+.lead {
+    color: var(--texto) ;
+}
