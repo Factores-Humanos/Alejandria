@@ -1,0 +1,69 @@
+# Sistema operativo
+*.log
+*.pot
+*.pyc
+*.pyo
+*.swp
+*.sqlite3
+.DS_Store
+
+# Entorno virtual
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+.env/
+
+# Configuración de entorno
+.env
+
+# Compilación de documentación
+/docs/_build/
+
+# Bytecode de Python
+*.py[cod]
+__pycache__/
+
+# Configuración de editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de migraciones
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/__pycache__/
+
+# Archivos de media y static generados
+/staticfiles/
+/media/
+
+# Configuración de despliegue
+.pyup/
+.tox/
+.coverage
+*.cover
+.hypothesis/
+
+# Archivos de prueba
+.test/
+.testresults/
+.coverage.*
+*.cover
+.cache
+
+# Compilación de locales
+*.mo
+
+# Archivos de respaldo
+*.bak
+*.swp
+
+# Django stuff:
+local_settings.py
+db.sqlite3
+
+# Archivos de pipenv
+Pipfile.lock
