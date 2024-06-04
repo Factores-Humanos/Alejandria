@@ -2,17 +2,14 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from alejandria_backend.settings import base
+from dotenv import load_dotenv
+
 
 def main():
     """Run administrative tasks."""
-    
-    if base.DEBUG:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alejandria_backend.settings.development')
-    else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'alejandria_backend.settings.production')
- 
-    
+
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "alejandria_backend.settings")
+
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
@@ -24,5 +21,6 @@ def main():
     execute_from_command_line(sys.argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
+    load_dotenv()
     main()
