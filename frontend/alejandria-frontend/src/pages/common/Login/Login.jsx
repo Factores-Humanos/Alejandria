@@ -30,7 +30,7 @@ export const Login = () => {
                         token: res.data.token.access,
                         tokenType: 'Bearer',
                         authState: res.data.user.user_name,
-                        expiresIn: 3600,
+                        expiresIn: 0, // Set expiresIn to 0 to make the session never expire
                     },
                     userState: {
                         id: res.data.user.id,
@@ -38,7 +38,6 @@ export const Login = () => {
                         email: res.data.user.email_address,
                         role: res.data.user.roles[0].description,
                     }
-
                 }
                 // Revisar la lógica de autenticación en useSignIn
                 const signInResult = signIn(signInData)

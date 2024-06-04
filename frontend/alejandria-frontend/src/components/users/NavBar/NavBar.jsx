@@ -78,7 +78,10 @@ const NavBar = ({ isLoggedIn }) => {
                 </div>
                 {isLoggedIn ? (
                     <div className="dropdown">
-                        <FontAwesomeIcon icon={faShoppingCart} className="mx-2" size="lg" />
+                        <Link to={"/cart"}>
+                            <FontAwesomeIcon icon={faShoppingCart} className="mx-2" size="lg" />
+                        </Link>
+
                         <button className="btn btn-outline-secondary dropdown-toggle" type="button" onClick={toggleUserDropdown}>
                             <FontAwesomeIcon icon={faUser} className="mx-2" />
                         </button>

@@ -1,0 +1,36 @@
+.table-striped {
+    background-color: #f9f9f9;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #eaeaea;
+}
+
+.table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tbody tr {
+    transition: background-color 0.3s;
+}
+
+.btn-export {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-export:hover {
+    background-color: #0056b3;
+    color: white;
+}

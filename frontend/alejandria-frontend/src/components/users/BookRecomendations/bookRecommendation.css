@@ -17,12 +17,12 @@
     /* Utilizamos flexbox para posicionar elementos */
 }
 
-.book-cover {
+.book-cover-recomend {
     width: 40%;
     /* Definimos el tamaño fijo de la portada del libro */
 }
 
-.book-cover img {
+.book-cover-recomend img {
     width: 250px;
     /* Ajustamos la anchura máxima de la imagen */
 }

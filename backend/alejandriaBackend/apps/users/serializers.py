@@ -10,9 +10,16 @@ class FavoriteListSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
-class CartSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
+class CartReadSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)
     books = BookSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Cart
+        fields = "__all__"
+
+
+class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
         fields = "__all__"

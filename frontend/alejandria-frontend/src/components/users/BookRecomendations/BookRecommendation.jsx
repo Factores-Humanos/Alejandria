@@ -55,7 +55,7 @@ const BookRecommendation = () => {
                     {books.length > 0 && (
                         <>
                             <div className="book-details">
-                                <div className="book-cover">
+                                <div className="book-cover-recomend">
                                     <img src={bookCovers[books[currentSlide].id]} alt={books[currentSlide].title} />
                                 </div>
                                 <div className="book-info">

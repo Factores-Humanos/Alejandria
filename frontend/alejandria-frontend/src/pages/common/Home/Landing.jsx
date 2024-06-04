@@ -17,12 +17,10 @@ const Landing = () => {
     console.log(auth);
     return (
         <div className="container-bg">
-            <NavBar isLoggedIn={auth != null ? true : false} />
             <HeroSection />
             <BookRecommendation />
             <SectionIcons />
             <RecentPublications />
-            <Footer />
         </div>
 
     )

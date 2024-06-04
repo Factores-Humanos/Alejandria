@@ -1,5 +1,33 @@
-.main {
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
+/* books.css */
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table thead th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table tbody tr.table-success {
+    background-color: #d4edda;
+}
+
+.table tbody tr.table-warning {
+    background-color: #fff3cd;
+}
+
+.filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.filters .form-select {
+    width: 200px;
+}
+
+.btn {
+    margin-right: 10px;
 }

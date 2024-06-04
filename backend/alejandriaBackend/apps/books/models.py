@@ -45,6 +45,7 @@ class Book(BaseModel):
     publisher = models.ForeignKey(Publisher, models.DO_NOTHING, blank=True, null=True)
     seller = models.ForeignKey("users.User", models.DO_NOTHING)
     categories = models.ManyToManyField(Category, db_table="book_category")
+    status = models.CharField()
 
     class Meta:
         managed = False

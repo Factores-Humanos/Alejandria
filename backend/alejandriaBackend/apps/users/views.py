@@ -13,6 +13,7 @@ from .models import User, Role, FavoriteList, Cart, Comment
 from .serializers import (
     FavoriteListSerializer,
     CartSerializer,
+    CartReadSerializer,
     CommentSerializer,
 )
 from apps.comon import UserSerializer, RoleSerializer
@@ -180,6 +181,75 @@ class FavoriteListViewSet(viewsets.ModelViewSet):
 class CartViewSet(viewsets.ModelViewSet):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
+
+    def get_serializer_class(self):
+        if self.action == "create":
+            return CartSerializer
+        return CartReadSerializer
+
+    # Action to add a book to the cart
+    # /api/carts/add_to_cart/
+    @action(detail=False, methods=["POST"])
+    def add_to_cart(self, request):
+        data = request.data
+        print(f"data: {data}")
+        user_id = data.get("user")
+        book_id = data.get("books")[0]
+
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response(
+                {"error": "Usuario no encontrado"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Check if the user already has a cart
+        cart = Cart.objects.filter(user=user).first()
+
+        if not cart:
+            # Create a new cart for the user
+            cart = Cart.objects.create(user=user, total_amount=0)
+
+        # Check if the book is already in the cart
+        if cart.books.filter(id=book_id).exists():
+            return Response(
+                {"error": "El libro ya está en el carrito"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Add the book to the cart
+        cart.books.add(book_id)
+
+        return Response(
+            {"message": "Libro agregado al carrito exitosamente"},
+            status=status.HTTP_200_OK,
+        )
+
+    # Action to get cart by user ID
+    # /api/carts/get_cart_by_user/
+    @action(detail=False, methods=["GET"])
+    def get_cart_by_user(self, request):
+        user_id = request.query_params.get("user_id")
+
+        try:
+            user = User.objects.get(id=user_id)
+        except User.DoesNotExist:
+            return Response(
+                {"error": "Usuario no encontrado"},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        cart = Cart.objects.filter(user=user).first()
+
+        if not cart:
+            return Response(
+                {"message": "El usuario no tiene un carrito"},
+                status=status.HTTP_200_OK,
+            )
+
+        serializer = CartReadSerializer(cart)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class CommentViewSet(viewsets.ModelViewSet):

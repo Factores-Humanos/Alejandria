@@ -57,7 +57,7 @@ const AdminHome = () => {
 
         listBooks()
             .then(response => {
-                setTotalBooks(response.data.length);
+                setTotalBooks(response.length);
             })
             .catch(error => {
                 console.error('Error al obtener la lista de libros:', error);
